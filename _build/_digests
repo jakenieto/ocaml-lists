@@ -1,0 +1,5 @@
+"Rule: ocaml: ml & cmi -> cmx & o (%=power_set )": "\137B\212`\021\138\188\022\025q\018\003\022\186\239\028"
+"Rule: ocaml: ml -> cmo & cmi (%=power_set )": "\132\198T\178\206\180\001\173\030\234fF\239N\210\t"
+"Rule: ocaml: cmx* & o* -> native (%=power_set )": ">\234\140/\179~*[\029\002r\166\180\211t\004"
+"Rule: ocaml dependencies ml (%=power_set )": "\201\139&\205\128\136m\239\229\157\020i4\171P'"
+"Resource: /Users/jnieto/Desktop/ocaml/ocaml-lists/power_set.ml": "\163\130\234\250\203\210\250\177J\199\145\145\136\1887M"

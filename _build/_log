@@ -1,0 +1,10 @@
+### Starting build.
+# Target: power_set.ml.depends, tags: { package(oUnit,extlib,unix,str), extension:ml, file:power_set.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -package oUnit,extlib,unix,str -modules power_set.ml > power_set.ml.depends
+# Target: power_set.cmo, tags: { package(oUnit,extlib,unix,str), byte, compile, extension:cmo, extension:ml, file:power_set.cmo, file:power_set.ml, implem, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -package oUnit,extlib,unix,str -o power_set.cmo power_set.ml
+# Target: power_set.cmx, tags: { package(oUnit,extlib,unix,str), compile, extension:cmx, extension:ml, file:power_set.cmx, file:power_set.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -package oUnit,extlib,unix,str -o power_set.cmx power_set.ml
+# Target: power_set.native, tags: { package(oUnit,extlib,unix,str), dont_link_with, extension:native, file:power_set.native, link, native, ocaml, program, quiet, traverse }
+ocamlfind ocamlopt -linkpkg -package oUnit,extlib,unix,str power_set.cmx -o power_set.native
+# Compilation successful.
