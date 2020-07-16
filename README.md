@@ -1,58 +1,26 @@
 # ocaml-nats - Learning OCaml
 
-  This is my first project in OCaml. I implemented the natural numbers and their basic operations (addition, subtraction, multiplication, etc...) in OCaml from first principles (without using OCaml’s built in Integer type).
+  This is my 2nd project in OCaml. I implemented the a function to compute the power set and set of all permutations of an input list.
 
-## Basic Structure
-The type for a natural number is defined as either 0, or the successor of a natural number. 
+## Power set
 ```
-  type nat = Zero | Succ of nat
+let rec power_set list = match list with
+  | [] -> [[]]
+  | first::rest -> 
+    let rest_power_set = power_set rest in
+    rest_power_set @ insert_ele first rest_power_set 
 ```
+## Permutations
 
-## Addition
 ```
-let rec nat_add a b = match (a,b) with 
-  | (a, Zero)
-  | (Zero, a) -> a
-  | (Succ(c), Succ(d)) ->  Succ(Succ(nat_add c d))
-```
-## Subtraction
-```
-let rec nat_sub a b = match (a,b) with
-  | (Undef, _)
-  | (_, Undef) ->  Undef
-  | (a, Zero) -> a
-  | (Succ(c), Succ(d)) -> nat_sub c d
-  | (Zero, _) -> Undef
-```
-## Multiplication
-```
-let rec nat_mult a b = match (a,b) with 
-  | (a, Zero)
-  | (Zero, a) -> Zero
-  | (a, Succ(c)) -> nat_add a (nat_mult a c )
-  
-```
-## Division
-```
-let rec nat_divide a b = match (a, b) with
-| (Undef, _)
-| (_, Undef) ->  Undef
-| (_, Zero) -> Undef
-| (Zero, _) -> Zero
-| (c, d) -> 
-    let diff = nat_sub c d  in 
-      match diff with 
-        | Undef -> Zero
-        | nat -> Succ(nat_divide (nat_sub c d) d)
-```
-## String Representation 
-```
-let rec nat_to_string n = match n with 
-  | Undef -> "Undef"
-  | Zero -> "Zero"
-  | Succ(a) -> "Succ(" ^ nat_to_string(a) ^ ")"
-```
+let concat_map f list = List.concat (List.map f list) 
 
+let rec permute list = match list with
+  | [] -> [[]]
+  | first::rest -> 
+      let rest_permutations = permute rest in
+      concat_map (fun rest_permutation -> all_insertions first rest_permutation) rest_permutations
+```
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
 <https://quasarbright.github.io>
