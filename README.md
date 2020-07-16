@@ -1,4 +1,4 @@
-# ocaml-nats - Learning OCaml
+# ocaml-lists - Learning OCaml
 
   This is my 2nd project in OCaml. I implemented the a function to compute the power set and set of all permutations of an input list.
 
