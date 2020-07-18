@@ -1,6 +1,6 @@
 # ocaml-lists - Learning OCaml
 
-  This is my 2nd project in OCaml. I implemented the a function to compute the power set and set of all permutations of an input list.
+  This is my 2nd project in OCaml. I implemented many of the [99 OCaml problems] (https://www.ocaml.org/learn/tutorials/99problems.html) along with some of my own.
 
 ## Power set
 ```
@@ -70,9 +70,18 @@ let rec flatten list = match list with
   | first::rest -> match first with 
     | One(a) -> a::flatten rest
     | Many(b) -> flatten b @ flatten rest
-```
+
 # Haley was here
 
+
+## Rotate
+```
+let rec rotate_list list n = match (list, n) with 
+  | (_,0) -> list
+  | ([], n) -> []
+  | (first::rest, n) -> (rotate_list (rest @ [first]) (n - 1)) 
+  
+```
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
 <https://quasarbright.github.io>
