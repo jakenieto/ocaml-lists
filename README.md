@@ -21,6 +21,33 @@ let rec permute list = match list with
       let rest_permutations = permute rest in
       concat_map (fun rest_permutation -> all_insertions first rest_permutation) rest_permutations
 ```
+
+## Subsets
+
+```
+(* 
+    consumes two lists and ensures they are both sets. If so, it determines if one is 
+    a subset of the other by recursively checking that each element in list a
+    is an element in list b. 
+  *)
+let rec is_subset a b = match (a,b) with
+  | ([],[]) 
+  | ([],_) -> true
+  | (_,[]) -> false
+  | (first::rest, b) when (is_set a && is_set b) -> (has_ele first b) && (is_subset rest b)
+  | (first::rest, b) -> false
+
+```
+## Prefix
+
+```
+(* consumes list a and b and returns boolean whether a is a prefix of b or not *)
+let rec is_prefix a b = match (a,b) with
+  | ([],_) -> true
+  | (_,[]) -> false
+  | (first1::rest1, first2::rest2) -> first1 = first2 && (is_prefix rest1 rest2)
+
+```
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
 <https://quasarbright.github.io>
