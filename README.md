@@ -71,7 +71,14 @@ let rec flatten list = match list with
     | One(a) -> a::flatten rest
     | Many(b) -> flatten b @ flatten rest
 ```
-
+## Rotate
+```
+let rec rotate_list list n = match (list, n) with 
+  | (_,0) -> list
+  | ([], n) -> []
+  | (first::rest, n) -> (rotate_list (rest @ [first]) (n - 1)) 
+  
+```
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
 <https://quasarbright.github.io>
