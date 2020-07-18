@@ -1,6 +1,6 @@
 # ocaml-lists - Learning OCaml
 
-  This is my 2nd project in OCaml. I implemented the a function to compute the power set and set of all permutations of an input list.
+  This is my 2nd project in OCaml. I implemented many of the [99 OCaml problems] (https://ocaml.org/learn/tutorials/99problems.html) along with some of my own.
 
 ## Power set
 ```
