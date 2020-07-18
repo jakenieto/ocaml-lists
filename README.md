@@ -57,7 +57,20 @@ let rec quicksort list = match list with
     let g_set = List.filter(function ele -> (ele >= first)) rest in
     (quicksort l_set) @ [first] @ (quicksort g_set)
 ```
+## Flatten 
+```
+(* Here is the 'node' type that allows for lists to be nested *)
+type 'a node =
+  | One of 'a 
+  | Many of 'a node list
+  
 
+let rec flatten list = match list with 
+  | [] -> []
+  | first::rest -> match first with 
+    | One(a) -> a::flatten rest
+    | Many(b) -> flatten b @ flatten rest
+```
 
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
