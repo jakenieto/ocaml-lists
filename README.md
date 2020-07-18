@@ -1,6 +1,6 @@
 # ocaml-lists - Learning OCaml
 
-  This is my 2nd project in OCaml. I implemented many of the [99 OCaml problems] (https://ocaml.org/learn/tutorials/99problems.html) along with some of my own.
+  This is my 2nd project in OCaml. I implemented many of the [99 OCaml problems] (https://www.ocaml.org/learn/tutorials/99problems.html) along with some of my own.
 
 ## Power set
 ```
