@@ -48,6 +48,17 @@ let rec is_prefix a b = match (a,b) with
   | (first1::rest1, first2::rest2) -> first1 = first2 && (is_prefix rest1 rest2)
 
 ```
+## Quicksort
+```
+let rec quicksort list = match list with
+  | [] -> [] 
+  | first::rest -> 
+    let l_set = List.filter (function ele -> (ele < first)) rest in
+    let g_set = List.filter(function ele -> (ele >= first)) rest in
+    (quicksort l_set) @ [first] @ (quicksort g_set)
+```
+
+
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
 <https://quasarbright.github.io>
