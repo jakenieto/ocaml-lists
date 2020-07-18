@@ -71,6 +71,7 @@ let rec flatten list = match list with
     | One(a) -> a::flatten rest
     | Many(b) -> flatten b @ flatten rest
 ```
+# Haley was here
 
 ## Inspiration
 I would like to thank Michael Delmonaco for his help in teaching me OCaml and giving me the inspiration for this project. 
